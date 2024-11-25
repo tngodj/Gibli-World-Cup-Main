@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        이상형 월드컵 메인
+    </title>
+    <style>
+        div1{
+            margin : 10px;
+            position : absolute;
+        }
+        input{
+            width : 180px;
+        }
+</style>
+
+</head>
+<body style="background-image: url('배경화면0001.jpg');">
+
+    <div1 style="right: 0px;">
+        <a href="">
+        <input type="submit" value="뒤로 가기" style="font-size: 35px; background-color: rgb(39, 175, 68);">
+        </a>
+    </div1>
+    <div1 style="left: 29%; top: 20%;">
+        <span style="font-size: 60px; color: rgb(21, 75, 48)">지브리 캐릭터 이상형 월드컵</span>
+    </div1>
+    <div1 style="left: 40%; top: 66%;">
+        <input type="submit" value="게임 방법" style="font-size: 35px; background-color: rgb(39, 175, 68);"
+        onmouseover="this.style='font-size: 35px; background-color: red;'"
+        onmouseout="this.style='font-size: 35px; background-color: rgb(39, 175, 68);'"
+        onclick="CASE1(this)" id="win1">
+
+        <input type="submit" value="게임 시작" style="font-size: 35px; background-color: rgb(39, 175, 68);"
+        onmouseover="this.style='font-size: 35px; background-color: red;'"
+        onmouseout="this.style='font-size: 35px; background-color: rgb(39, 175, 68);'"
+        onclick="CASE0(this)" id="win0">
+    </div1>
+
+    <script>
+        var scoreset = document.getElementById("win0");//이벤트 리스너(바로 위에서 정의), 이와 별개로 20번째 줄 "뒤로 가기" 버튼 위 <a href=""> 구문에서 메인 화면으로 넘어가도록 함
+        var help = document.getElementById("win1");
+        scoreset.addEventListener("click", CASE0);
+
+        function CASE0(obj){
+            localStorage.clear();//시작 전 데이터 초기화(오류 방지)
+            location.href = "WebGame001Start2.html";//<a href>와 같다. 다음 페이지로 이동
+        }
+
+        function CASE1(obj){//설명문(30번째 줄 버튼)
+            alert('이것은 자신이 원하는 것을 고르는 게임입니다.\n32개의 캐릭터가 나오고 총 31번의 결정을 하게 됩니다.\n이미지 아래 선택 버튼을 누르면 다음 페이지로 이동합니다.');
+        }
+    </script>
+</body>
+</html>
